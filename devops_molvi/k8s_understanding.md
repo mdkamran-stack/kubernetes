@@ -144,5 +144,5 @@ When pods run as part of Statefulset, k8s keeps state data in the persistent sto
 ## NodePort >> Allows external accessibility of apps.
 ## RBAC >> Users and service account permissions.
 ## Annotation >> To label objects.
-## ClusterIP >> Cluster's internal IP address .
-## LoadBalancer >> Equal traffic distribution.
+## ClusterIP >> Cluster's internal IP address 
+## LoadBalancer >> Equal traffic distribution
