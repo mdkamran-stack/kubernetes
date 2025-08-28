@@ -146,3 +146,200 @@ When pods run as part of Statefulset, k8s keeps state data in the persistent sto
 ## Annotation >> To label objects.
 ## ClusterIP >> Cluster's internal IP address 
 ## LoadBalancer >> Equal traffic distribution
+
+## Running few kubectl commands
+kubectl cluster-info
+
+kubectl config view
+
+kubectl get nodes
+
+kubectl get pods
+
+kubectl get pods  --all-namespaces 
+
+## Deploy NGINX web server on Minikube and access locally
+kubectl create deployment devops-web --image=nginx:latest
+
+kubectl get deployment
+
+kubectl expose deployment devops-web --port=80 --type=LoadBalancer
+
+kubectl get services
+
+kubectl get pods
+
+## cluster information in more granular way.
+
+kubectl clsuter-info dump  
+
+## Get the information about node in details.
+
+kubectl describe node nodename (in my case conrtolplan)  
+
+## overview of all the resources in cluster
+
+kubectl get all  
+
+kubectl option (for more deeper)  
+
+## Api related info (when we have to the verison upgradations)
+
+kubectl api-resources  
+
+kubectl api-version (supprted api & version)  
+
+## To get the namespace (A namespace in Kubernetes is a logical partition within a cluster that allows you to organize and isolate resources. It’s mainly used for multi-tenancy, environment separation (like dev, test, prod),)
+
+kubectl get namespaces  
+
+kubectl config set-context --current --namespace=dev  (to create ns)  
+
+kubectl config set-context --current --namespace=controlplane  
+
+kubectl get pods  
+
+kubectl create namespace mytestns  
+
+kubectl get namespaces  
+
+kubectl delete namespace nameofns  (verydanger cmd be concious)  
+
+kubectl get pods -n kube-system  
+
+kubectl get pods --all-namespaces ( to list of very namespace)  
+
+kubectl get pods -o wide --all-namespaces  
+
+kubectl get pods -A  (same as above cmd)  
+
+## To check specific pods logs details 
+
+kubectl describe pod pod-name -n  namespace  
+kubectl describe pod es-cluster-0 -n kamran
+
+kubectl get pods -A  
+
+kubectl logs name -n Namespace  
+
+kubectl logs -f name -n Namsapce ( like tail cmd)  
+
+## To login any pods 
+
+kubectl get pods  
+
+kubectl exec -it Name of pod -- /bin/bash  (now we are mving inside the pod)  
+
+kubcetl run pod2 --image=alpine:latest ( to create new pod)  
+
+kubctl get pods   
+
+## For deployment 
+
+kubectl get deployment   
+
+kubectl create deployment deployment-name --image=nginx:latest  
+
+kubectl get deployments --all-namespaces (to list down all namespaces of deployment in our k8s )  
+
+kubectl delete deployment deployment name   
+
+## To list services of namespaces  
+
+kubectl get sevice --all-namespaces  
+
+kubectl delete service Nameof service  
+
+kubectl create service loadbalancer nameof service --tcp=80:8080  (80 is internal port 8080 is external port)  
+
+## configmap dela with non-sensituve data 
+
+kubectl get configmaps -n default  
+
+kubectl describe configmap Name -n kube-system  
+
+## To get the secrets of any k8s clsuter 
+
+kubectl get secrets --all-namespaces  
+
+## FOr statefulsets
+
+kubectl get statefulsets --all-namespaces  
+
+## Replicaset , identical no.of pod in replicaset.
+
+kubectl get replicaset --all-namespaces  
+
+kubectl get daemonset --all-namespaces
+
+## To monitor a nodes & pods
+
+kubectl top nodes  
+
+kubectl top pods  
+
+## for live status of pods
+
+kubectl get pods --watch --all-namespaces  
+
+## To get whole cluster configurations
+
+`kubectl  config view`  
+
+`kubectl config view` ==> To view your current Kubernetes configurations.
+
+`kubectl exec -it es-cluster-0 -- /bin/bash` ==> Connect with elasticsearch-0 pod using SSH.
+
+## pv & pvc pv is something attached to a pod & pvc is per vol claim for attached to pod, we have to claim once succeful then it will attached to pod.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
