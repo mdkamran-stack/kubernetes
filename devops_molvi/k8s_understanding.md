@@ -292,8 +292,17 @@ kubectl get pods --watch --all-namespaces
 
 ## pv & pvc pv is something attached to a pod & pvc is per vol claim for attached to pod, we have to claim once succeful then it will attached to pod.
 
+## diff b/w Replicaset vs Daemonset vs Statefulset.
 
+Replicaset ensures that identical no.of pod running at every time if i am using 3 replica means 3 pods are always running on my worker nodes.
 
+Daemonset: It ensure 1 pod is running on each worker node best for log collection monitoring and security agents.
+
+Statefulset: application which need persistent data stores each pod will get dedicated persistent volume attached to it for data storage if we have application using mysql or mongodb.
+
+## Roles RBAC 
+Roles is set of permission for specific namespace.
+Cluster Roles set of permissions for Entire clsuter.
 
 
 
