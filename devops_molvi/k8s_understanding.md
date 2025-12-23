@@ -33,15 +33,16 @@ Rollout automatically rollout our changes if its not per our expectation we can 
 
 
 ## k8s architectur  
-1. Kube-API is responsible for authentication & auth to create delete and manage worker nodes.  
-2. Kube scheduler its communicate with API server to schedule pods on worker nodes  
-3. Kube controller manager maintain & monitor clsuter  current states.  
-4. Etcd contain whole data of cluster.  
+FIRST control plan (master node) 
+1. Kube-API is responsible for authentication & auth & gets the data E.g: kubectl get pod thats what runs in the backend.
+2. Kube scheduler schedule the pods on nodes baesd on the CPU & memory requirements that you have given.  
+3. Kube controller manager = Manages all the different controller like relication controller, job controller & node controller.  
+4. Etcd server is brain of the k8s cluster and stores all the meta data of all the resources.
 
 ## Worker Node 3 component :  
-1. kubeletet: 
-2. Kube-proxy:
-3. container run time:  
+1. kubeletet: It is responsible to commuicate the state of the pod running on the node back to API server
+2. Kube-proxy: Is repsonsible for intercommunication of pod 
+3. CRD: is nothing but actual conatiner run time like CRio docker containerd.
 
 ## What is K8s Cluster.  
 
