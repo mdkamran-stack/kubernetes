@@ -36,7 +36,7 @@ Rollout automatically rollout our changes if its not per our expectation we can 
 FIRST control plan (master node) 
 1. Kube-API is responsible for authentication & auth & gets the data E.g: kubectl get pod thats what runs in the backend.
 2. Kube scheduler schedule the pods on nodes baesd on the CPU & memory requirements that you have given.  
-3. Kube controller manager = Manages all the different controller like relication controller, job controller & node controller.  
+3. Kube controller manager = Manages all the different controller like replication controller, job controller & node controller.  
 4. Etcd server is brain of the k8s cluster and stores all the meta data of all the resources.
 
 ## Worker Node 3 component :  
