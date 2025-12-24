@@ -33,4 +33,45 @@ kubectl taint node worker red:NoSchedul-
 affinity means scheduling pods together based on rules (e.g., co-locating workloads), while anti-affinity means scheduling pods apart to avoid running them on the same
 node or topology.
 
+## Suppose we have schedule a pod on node2 if not available then goes on node3
 
+kubectl label node worker-2 region=india
+
+kubectl label node worker-3 region=india
+
+kubectl label node worker-2 zone=powe1a
+
+kubectl label node worker-3 zone=powe1b
+
+## vi demo.yaml
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: with-node-affinity
+spec:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: region    ## changes
+            operator: In
+            values:
+             - india           ## here changes
+      preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: 1
+        preference:
+          matchExpressions:
+          - key: zone
+            operator: In
+            values:
+            - powe1a   ## here changes
+  containers:
+  - name: with-node-affinity
+    image: nginx    ## chnaged
+
+
+## kubectl create -f demo.yaml
+
+kubectl get pod demo.yaml -o wide
