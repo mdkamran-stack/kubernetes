@@ -128,5 +128,9 @@ Vertical scaling (scale up) means upgrading a single machine with more CPU, memo
 
 ## have to learn pv & pvc make a note
 
+PV is the actual storage resource provided by the cluster, while PVC is the user’s request to claim and use that storage.
 
+## what is label and selector
+
+Labels are key‑value tags on Kubernetes objects, and selectors are queries that filter or match those objects based on their labels.
 
