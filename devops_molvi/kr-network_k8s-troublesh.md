@@ -134,3 +134,6 @@ PV is the actual storage resource provided by the cluster, while PVC is the user
 
 Labels are key‑value tags on Kubernetes objects, and selectors are queries that filter or match those objects based on their labels.
 
+# One pv will claim in one pvc
+# dynamic provisioning suppose we want 1 gb it will provide one 1gb and it is identified by access mode and size .
+
