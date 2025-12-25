@@ -30,7 +30,7 @@ kubectl taint node worker red:NoSchedul-
 
 ## what is affinity vs antiaffinity in k8s
 
-affinity means scheduling pods together based on rules (e.g., co-locating workloads), while anti-affinity means scheduling pods apart to avoid running them on the same
+affinity means scheduling pods together based on rules (e.g., co-locating workloads), while anti-affinity means scheduling pods to avoid running them on the same
 node or topology.
 
 ## Suppose we have schedule a pod on node2 if not available then goes on node3
