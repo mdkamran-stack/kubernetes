@@ -137,3 +137,15 @@ Labels are key‑value tags on Kubernetes objects, and selectors are queries tha
 # One pv will claim in one pvc
 # dynamic provisioning suppose we want 1 gb it will provide one 1gb and it is identified by access mode and size .
 
+## what is namespace in k8s
+A namespace is used to logically isolate and manage Kubernetes resources within a single cluster.
+
+## what is difference b/w deployment statefulset and Daemonset.
+
+Deployment: webapplication microservices RestAPI
+StatefuleSet: Database Message queue distibuted system (Elastic search Kafka)
+Daemonset: Logging Agent Fluentd (Prometus node exporter) Network plugins.  
+
+## what is Repicaset
+Replicaset Ensures Specified no of pod running all time.
+
