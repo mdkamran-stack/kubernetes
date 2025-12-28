@@ -149,3 +149,28 @@ Daemonset: Logging Agent Fluentd (Prometus node exporter) Network plugins.
 ## what is Repicaset
 Replicaset Ensures Specified no of pod running all time.
 
+## kubernetes network pod to pod cmmunications 
+Any pod can communnicate with any pod or services using their ip address or name, to secure this k8s has provided network policies  
+
+There are 2 types of traffic ingress and Egress  
+
+For Ingress we will specify in from where traffic comes in pod to identify the identity of pod we use pod selector in pod selector we pass label from traffic coming.
+select the matchlabels and role and in ports we will specify the port number and protocol.  
+
+case1: suppose we want to provide DB pod form same defaut namespace  - podSelector:  >> matchlabels:  >> role: backend  
+
+case2: suppose our backend pod is not in default namespace it is present in prod namespace the how we will allow 
+Then we have to add namepaceSelector: >> matchlabels: >> ns: prod   
+It says that those backend pod which is reside in prod namespace can access DB database
+
+case3: in namespace Selector we will add - means we are allowing all pod which is present in prod namespace can access DB pod.  
+
+case4: suppose there is any server which is out of k8s cluster and allow to access db 
+In this case we will allow server ip protocol and and its ports   
+- ipBlock: cidr: 172.17.9.0/16  >> ports: >> - protocol: TCP  >> port: 6379
+In ingress we have used From and for Egress we used to 
+
+
+
+
+
