@@ -76,14 +76,13 @@ spec:
 
 kubectl get pod demo.yaml -o wide
 
+## what are the types of probes
+
+Liveness restarts the container, readiness controls traffic, and startup handles slow application initialization.
+
 ## diff bw node affinity antiafinity  vs pod affinity antiafinity.
 
-Node Affinity / Anti-Affinity controls which nodes a Pod can or cannot be scheduled on using node labels, whereas Pod Affinity / Anti-Affinity controls where Pods are placed relative to other Pods using Pod labels
-
-There are multiple application we always keep close Eg: Redis service should run with web service otherwise it will create latency Suppose redis service goes on node1
-and web service goes on node2 These 2 service we always couple in same node. here we have to write pod affinity rule b/w redis and web-service. 
-Antiaffinity means redis 2 pod couldnt run on same node should be stopped by pod anti affinity.
-If we want to maintance distnace then antiafinity come in picture , of we want to couple then affinity come in picture.
+Node affinity controls Pod placement based on node labels, while Pod affinity controls Pod placement relative to other Pods.
 
 ## diff b/w node labe selector taint and toleration
 
