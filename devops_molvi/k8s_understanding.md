@@ -62,11 +62,10 @@ FIRST control plan (master node)
 7. Three dedicated master nodes, the recommended number, provides two backup nodes in the event of a master node failure & the necessary quorun (2) to elect a new master.
 
 ## What is worker Node?
-1. A worker node in k8s is a machine that runs containerized app and handles networking for a cluster.  
-2. worker nodes run app process data and handle networking.  
-3. k8s runs our workload by placing container into pods on the worker nodes.  
-4. The main responsibilities of a worker node is proces data stored in the cluster & handle n/w to ensures traffic b/w the application across the cluster & outside of the cluster properly facilited.
-5. we can have one worker node in 1 k8s cluster as the minimum number.  
+    
+1.A worker node is a Kubernetes node that runs application workloads by hosting pods and executing containers as instructed by the control plane.
+
+2. we can have one worker node in 1 k8s cluster as the minimum number.  
 
 ## What is K8s Cluster.  
 A set of nodes managed by k8s, A cluster consist of master and worker nodes A nodes is a linux server.  
@@ -81,24 +80,22 @@ It is smallest unit of execution in the k8s system. it is made up of one or more
 A Namespace is an isolated environment in a cluster. The resources belonging to different namespaces cant directly interact with one another.  
 
 ## What is Deployment:
-A deployment manages a set of pods to run an application workload. The Deployment is a way to automate the process of creating and managing multiple replicas of the application, making it easier to manage, update, and scale our application without worrying about the underlying infrastructure.
+A Deployment is a Kubernetes object that manages stateless applications by handling pod creation, scaling, rolling updates, and rollbacks automatically.
 
 ## Service:
 A Service groups pods and exposes them for external traffic as a single entity in k8s services are commony used to expose pods to external or internal traffic.
 
 ## Replicaset:
-A group of identical pods running for a specific workloads is a Replicaset. A replicaset purpose is to keep a specified no of identical pods running at all times.This helps to ensure that an application is availabe and reliable even if some parts of it fail.  
+A ReplicaSet ensures that a specified number of identical pod replicas are running at all times in a Kubernetes cluster.
 
 ## ConfigMap:
-A configMap is a type of native API objects designed to store environment-specific 
-configuration data and share it with pods A configMap is k8s object used to store non-confidetial data in key-value pairs. 
-Config-map can be created using kubectl commands or YAML files.  
+A ConfigMap is a Kubernetes object used to store non-sensitive configuration data separately from application code and inject it into pods as environment variables or files.
 
 ## Ingress:
 Ingress means how external users access the applications or services. k8s ingress is the mechanism used to present services and application externally from within a cluster it can be a website , a blog that is accessed on a web browser.  
 
 ## DaemonSet:
-A Deamonset ensures that all (or some) Nodes run a copy of a pod, As nodes are added to the cluster, pods are added to them. Daemonset is k8s feature taht lets you run a k8s pod on all cluster nodes taht meet certain criteria. node is removed from the cluster the pod is removed when a daemonset is deleted k8s removes all the pods created by it.
+A DaemonSet ensures that a copy of a pod runs on every (or selected) node in a Kubernetes cluster, typically for node-level services like logging or monitoring
 
 ## NodePort
 A nodeport is a k8s service that allows external clients to access applications by opening a port on every node in a cluster , This service Opens a port on every node in a cluster , and forward traffic to the service.
